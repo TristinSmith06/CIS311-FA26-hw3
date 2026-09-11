@@ -1,52 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Contact form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 0.6875rem;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="main">
+    <div class="wrapper">
+      <section class="contact">
+        <form action="">
+          <h1>Contact Us</h1>
 
-  Contact Us
+          <div class="name-section">
 
-  First Name
-  This field is required
+            <div class="form-section">
+              <label for="firstname">First Name</label>
+              <input type="text" name="firstname" id="firstname">
+              <span class="invalid-text">This field is required</span>
+            </div>
 
-  Last Name
-  This field is required
+            <div class="form-section">
+              <label for="lastname">Last Name</label>
+              <input type="text" name="lastname" id="lastname">
+              <span class="invalid-text">This field is required</span>
+            </div>
+          </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+          <div class="form-section">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email">
+            Please enter a valid email address
+            This field is required
+          </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+          <fieldset>
+            <legend>Query Type</legend>
+            <div class="queries">
+              <div class="query-type-section">
+                <input type="radio" id="general_enquiry" name="query_type" value="general_enquiry">
+                <label for="general_enquiry">General Enquiry</label>
+              </div>
 
-  Message
-  This field is required
+              <div class="query-type-section">
+                <input type="radio" id="support_request" name="query_type" value="support_request">
+                <label for="support_request">Support Request</label>
+              </div>
+            </div>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+          </fieldset>
+          Please select a query type
 
-  Submit
+          <div class="form-section">
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+            This field is required
+          </div>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
+          <div class="form-section contact-consent">
+            <input type="checkbox" name="contact_consent" id="contact_consent">
+            <label for="contact_consent">I consent to being contacted by the team</label>
+          </div>
+          To submit this form, please consent to being contacted
+
+          <button type="submit" id="submit_contact">Submit</button>
+        </form>
+
+      </section>
+    </div>
+  </div>
+
+  <div id="toast" popover="manual" role="status">
+    <p class="toast-title">Message Sent!</p>
+    <p class="toast-text">Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </footer>
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
