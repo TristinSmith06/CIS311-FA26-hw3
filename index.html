@@ -34,53 +34,56 @@
           <div class="name-section">
 
             <div class="form-section">
-              <label for="firstname">First Name</label>
-              <input type="text" name="firstname" id="firstname">
+              <label for="firstname" class="text_input_header required_star">First Name</label>
+              <input type="text" name="firstname" id="firstname" required>
               <span class="invalid-text">This field is required</span>
             </div>
 
             <div class="form-section">
-              <label for="lastname">Last Name</label>
-              <input type="text" name="lastname" id="lastname">
+              <label for="lastname" class="text_input_header required_star">Last Name</label>
+              <input type="text" name="lastname" id="lastname" required>
               <span class="invalid-text">This field is required</span>
             </div>
           </div>
 
           <div class="form-section">
-            <label for="email">Email Address</label>
-            <input type="email" name="email" id="email">
-            Please enter a valid email address
-            This field is required
+            <label for="email" class="text_input_header required_star">Email Address</label>
+            <input type="email" name="email" id="email" required>
+            <!-- Please enter a valid email address -->
+            <span class="invalid-text">This field is required</span>
           </div>
 
           <fieldset>
-            <legend>Query Type</legend>
+            <legend class="text_input_header required_star query-section">Query Type</legend>
             <div class="queries">
               <div class="query-type-section">
-                <input type="radio" id="general_enquiry" name="query_type" value="general_enquiry">
-                <label for="general_enquiry">General Enquiry</label>
+                <input type="radio" id="general_enquiry" name="query_type" value="general_enquiry" required>
+                <label for="general_enquiry" class="radio-label">General Enquiry</label>
               </div>
 
               <div class="query-type-section">
-                <input type="radio" id="support_request" name="query_type" value="support_request">
-                <label for="support_request">Support Request</label>
+                <input type="radio" id="support_request" name="query_type" value="support_request" required>
+                <label for="support_request" class="radio-label">Support Request</label>
               </div>
             </div>
+            <span class="invalid-text">Please select a query type</span>
 
           </fieldset>
-          Please select a query type
 
           <div class="form-section">
-            <label for="message">Message</label>
-            <textarea name="message" id="message"></textarea>
-            This field is required
+            <label for="message" class="text_input_header  required_star">Message</label>
+            <textarea name="message" id="message" required></textarea>
+            <span class="invalid-text">This field is required</span>
           </div>
 
           <div class="form-section contact-consent">
-            <input type="checkbox" name="contact_consent" id="contact_consent">
-            <label for="contact_consent">I consent to being contacted by the team</label>
+            <div class="contact-checkbox">
+              <input type="checkbox" name="contact_consent" id="contact_consent" required>
+              <label for="contact_consent" id="contact-label">I consent to being contacted by the team <span
+                  class="required_star"> </span></label>
+            </div>
+            <span class="invalid-text">To submit this form, please consent to being contacted</span>
           </div>
-          To submit this form, please consent to being contacted
 
           <button type="submit" id="submit_contact">Submit</button>
         </form>
