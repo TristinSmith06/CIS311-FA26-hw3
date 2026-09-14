@@ -38,7 +38,26 @@
 #toast {
     position: fixed;
     top: 2rem;
-    background-color: var(--green600);
+    background-color: var(--grey900);
+    color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 400px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.toast-title{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.toast-text{
+    /* text-align: center; */
+    font-size: 14px;
 }
 
 label {
