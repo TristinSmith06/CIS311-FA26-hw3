@@ -29,33 +29,57 @@
 }
 
 .contact {
-    margin-block: 2rem;
+    margin-block: 7rem 2rem;
     background-color: white;
     padding: 30px;
     border-radius: 20px;
 }
 
-#toast {
+.toast-holder {
     position: fixed;
-    top: 2rem;
+    top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#toast {
     background-color: var(--grey900);
     color: white;
     border-radius: 10px;
     padding: 1.5rem;
     width: 400px;
+    position: fixed;
 
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+
+
+    opacity: 0;
+    transition: all 0.5s allow-discrete;
 
 }
 
-.toast-title{
+#toast:popover-open {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+@starting-style {
+    #toast:popover-open {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+.toast-title {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.toast-text{
+.toast-text {
     /* text-align: center; */
     font-size: 14px;
 }
@@ -129,6 +153,10 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+#contact-label{
+    cursor: pointer;
+}
+
 textarea {
     height: 80px;
     width: 100%;
@@ -171,6 +199,7 @@ fieldset {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
+    border: none;
 }
 
 #submit_contact:hover {
@@ -185,6 +214,16 @@ fieldset {
 .invalid-text {
     color: var(--red);
     display: none;
+    margin-top: 0.5rem;
+}
+
+input:not([type="checkbox"]):user-invalid{
+    outline: 2px solid var(--red);
+}
+
+
+textarea:user-invalid{
+    outline: 2px solid var(--red);
 }
 
 input:user-invalid~.invalid-text {
@@ -219,5 +258,9 @@ textarea:user-invalid~.invalid-text {
         /* grid-template-columns: repeat(2), 1fr; */
         grid-template-columns: 1fr;
         gap: 10px;
+    }
+
+    textarea {
+        height: 160px;
     }
 }

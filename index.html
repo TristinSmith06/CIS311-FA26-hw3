@@ -28,7 +28,7 @@
   <div class="main">
     <div class="wrapper">
       <section class="contact">
-        <form action="">
+        <form action="" id="contact-form">
           <h1>Contact Us</h1>
 
           <div class="name-section">
@@ -57,7 +57,7 @@
             <legend class="text_input_header required_star query-section">Query Type</legend>
             <div class="queries">
               <div class="query-type-section">
-                <input type="radio" id="general_enquiry" name="query_type" value="general_enquiry" required>
+                <input type="radio" id="general_enquiry" name="query_type" value="general_enquiry" required checked>
                 <label for="general_enquiry" class="radio-label">General Enquiry</label>
               </div>
 
@@ -78,11 +78,11 @@
 
           <div class="form-section contact-consent">
             <div class="contact-checkbox">
-              <input type="checkbox" name="contact_consent" id="contact_consent" required>
+              <input type="checkbox" name="contact_consent" id="contact_consent" required checked>
               <label for="contact_consent" id="contact-label">I consent to being contacted by the team <span
                   class="required_star"> </span></label>
             </div>
-            <span class="invalid-text">To submit this form, please consent to being contacted</span>
+            <span class="invalid-text" id="contact-consent-text">To submit this form, please consent to being contacted</span>
           </div>
 
           <button type="submit" id="submit_contact">Submit</button>
@@ -96,12 +96,14 @@
     <p class="toast-title">Message Sent!</p>
     <p class="toast-text">Thanks for completing the form. We'll be in touch soon!</p>
   </div> -->
-  <div id="toast">
+  <div class="toast-holder">
+  <div id="toast" popover="manual" role="status">
     <div class="toast-title">
       <img src="./assets/images/icon-success-check.svg" alt="">
       <p>Message Sent!</p>
     </div>
     <p class="toast-text">Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
   </div>
 
   <footer class="attribution">
