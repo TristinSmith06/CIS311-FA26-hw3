@@ -2,12 +2,15 @@ const contact_submit_toast = document.getElementById("toast");
 const submit_button = document.getElementById("submit_contact");
 const contact_form = document.getElementById("contact-form");
 
-submit_button.addEventListener('click', () => {
-    if(contact_form.checkValidity()){
+submit_button.addEventListener('click', (e) => {
+
+    if (!contact_form.reportValidity()) return
+    e.preventDefault()
+
+    if(contact_form.reportValidity()){
         show_toast();
     }
 })
-
 
 let hideTimer
 
